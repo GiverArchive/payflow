@@ -1,50 +1,20 @@
-import 'dart:ffi';
-
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
+import 'package:payflow/modules/home/home_page.dart';
+import 'package:payflow/shared/themes/app_colors.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
-      home: HomePage(),
-    ),
-  );
+  runApp(App());
 }
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  int count = 1;
-
-  void increment() {
-    setState((){
-      ++count;
-    });
-  }
-
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Contador"),
+    return MaterialApp(
+      title: "PayFlow",
+      theme: ThemeData(
+        primaryColor: AppColors.primary,
       ),
-      body: Center(
-        child: Text(
-          "Clicks:\n$count",
-          textAlign: TextAlign.center,
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          increment();
-        },
-      ),
+      home: HomePage(),
     );
   }
 }

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.counter">
+    package="com.example.payflow">
    <application
-        android:label="counter"
+        android:label="payflow"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
